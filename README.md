@@ -132,8 +132,9 @@ from
 ```
 ## Macros (Don't Repeat Yourself or D.R.Y.)
 - Create `macros/pricing.sql`
-```sql {% macro discounted_amount(extended_price, discount_percentage, scale=2) %}
-    (-1 * {{extended_price}} * {{discount_percentage}})::decimal(16, {{ scale }})
+```
+sql {% macro discounted_amount(extended_price, discount_percentage, scale=2) %}
+(-1 * {{extended_price}} * {{discount_percentage}})::decimal(16, {{ scale }})
 {% endmacro %}
 ```
 ## Transform Models (Fact Tables, Data Marts)
